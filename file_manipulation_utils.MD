@@ -1,0 +1,30 @@
+When trying to list folders with many files sometimes we get an error 'Arg list too long', we can avoide that by using find:
+
+>> find NAME_FOLDER/ -name *.gz | wc -l
+
+
+Delete files by pattern: 
+> find out -name *201212* | xargs rm
+
+
+Replace a string in a text file:
+
+> sed -e 's/$50 Bonus Talk, Text, Data & More/$50 Bonus Talk_ Text_ Data & More/g' FILE > NEW_FILE 
+
+
+Return the filename for a grep execution:
+
+> grep -ln 61404160943 *
+
+
+Print a specific values of a field in a DSV file given the separator and field position:
+
+This case the separator is |
+ 
+gzcat TID_au_gprsagg_DWH_0000105132.dat.gz | awk -F\| '{print $1}'
+
+ 
+
+Add a field to the end of a cdv file:
+
+awk -F\|'BEGIN { OFS = "|" } {$17="CSFB"; print}' ICT_AU_RCDR_0000046641_DUMMY.dat > ICT_AU_RCDR_0000046641_DUMMY_2.dat
