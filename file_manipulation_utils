@@ -1,7 +1,7 @@
 
 When trying to list folders with many files sometimes we get an error 'Arg list too long', we can avoide that by using find:
 
-> find NAME_FOLDER/ -name *.gz | wc -l
+>> find NAME_FOLDER/ -name *.gz | wc -l
 
 
 Delete files by pattern: 
