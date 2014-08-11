@@ -25,3 +25,24 @@ For DSV files return field value given field position and separator (this case a
 Add a field to the end of a DSV file (this case | separator and add field 17 with string Hello):
 
 > awk -F\|'BEGIN { OFS = "|" } {$17="Hello"; print}' ORIGINAL_FILE > NEW_FILE
+
+
+Get the files diferences between 2 folders: 
+
+> diff -r folder1 folder2
+
+In an ascii file return lines with specific pattern in a specific line position (this case string 400 in position 298 to 312 of the line):
+
+> cat FILE | egrep -e '^400' | cut -c298-312 | more
+
+
+Get number of lines with a specific number of patterns:
+
+> cat FILE | grep PATTERN1 | grep PATTERN2 | grep PATTERN3 | cut -c230-293 | grep PATTERN4 | wc -l
+
+
+
+
+
+
+
